@@ -1,0 +1,25 @@
+.trumbowyg-box,
+.trumbowyg-editor {
+  border: none !important;
+}
+
+.trumbowyg-box {
+  color: #333 !important;
+  border-top: 1px solid #d7e0e2 !important;
+}
+
+.trumbowyg-editor {
+  border-bottom: 1px solid #d7e0e2 !important;
+}
+
+.trumbowyg-button-pane {
+  background: #ffffff !important;
+}
+
+.trumbowyg-button-group button {
+  margin-bottom: 0 !important;
+
+  &:hover, &:focus, &.trumbowyg-active {
+    background: #d7e0e2 !important;
+  }
+}

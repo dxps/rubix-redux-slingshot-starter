@@ -1,0 +1,7 @@
+@import "bootstrap/colors";
+
+.btn-default {
+  @include button-variant($btn-default-color, white);
+}
+
+@include generateColors("text", $primary-color, white);

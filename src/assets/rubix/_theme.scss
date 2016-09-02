@@ -1,0 +1,218 @@
+@import "bootstrap/mixins/sass-list-maps";
+@import "bootstrap/theme-mixin";
+
+@mixin theme-maker($name, $list) {
+  /* GLOBAL SETTINGS */
+  $theme-color: white;
+  $theme-bg-color: #E76049;
+  $body-color: $primary-color;
+  $body-bg-color: #E9F0F5;
+  $header-color: $primary-color;
+  $header-bg-color: #273135;
+  $header-hover-color: #ffffff;
+  $logout-bg-color: #E76049;
+  $logout-color: #ffffff;
+  $logout-hover-bg: #F4654D;
+  $sidebar-btn-bg: #2AA38B;
+  $sidebar-btn-color: #ffffff;
+  $sidebar-btn-hover-bg: #2EB398;
+  $header-divider-color: rgba(59, 70, 72, 0.45);
+  $sidebar-bg: #273135;
+  $sidebar-width: 250px;
+  $sidebar-avatar-bg: #FA7252;
+  $sidebar-controls-bg: #DE5939;
+  $sidebar-controls-btn-color: #993F31;
+  $sidebar-controls-btn-border: darken(#D25436, 2%);
+  $sidebar-controls-btn-active-bg: lighten(#A74635, 5%);
+  $sidebar-controls-btn-active-color: #FA7252;
+  $components-link-color: #2EB398;
+  $components-panel-bg: #ffffff;
+  $components-panel-border: #CEDBEC;
+  $components-form-control-border: #ddd;
+  $components-form-control-active-border: #2EB398;
+  $footer-color: #CCD6DF;
+  $footer-bg: $primary-color;
+
+  @if get($list, theme, color) != null {
+    $theme-color: get($list, theme, color);
+  }
+
+  @if get($list, theme, bg) != null {
+    $theme-bg-color: get($list, theme, bg);
+  }
+
+  @if get($list, body, color) != null {
+    $body-color: get($list, body, color);
+  }
+
+  @if get($list, body, bg) != null {
+    $body-bg-color: get($list, body, bg);
+  }
+
+  @if get($list, header, color) != null {
+    $header-color: get($list, header, color);
+  }
+
+  @if get($list, header, bg) != null {
+    $header-bg-color: get($list, header, bg);
+  }
+
+  @if get($list, header, hover-color) != null {
+    $header-hover-color: get($list, header, hover-color);
+  }
+
+  @if get($list, header, logout, color) != null {
+    $logout-color: get($list, header, logout, color);
+  }
+
+  @if get($list, header, logout, bg) != null {
+    $logout-bg-color: get($list, header, logout, bg);
+  }
+
+  @if get($list, header, logout, hover-bg) != null {
+    $logout-hover-bg: get($list, header, logout, hover-bg);
+  }
+
+  @if get($list, header, sidebar-btn, color) != null {
+    $sidebar-btn-color: get($list, header, sidebar-btn, color);
+  }
+
+  @if get($list, header, sidebar-btn, bg) != null {
+    $sidebar-btn-bg: get($list, header, sidebar-btn, bg);
+  }
+
+  @if get($list, header, sidebar-btn, hover-bg) != null {
+    $sidebar-btn-hover-bg: get($list, header, sidebar-btn, hover-bg);
+  }
+
+  @if get($list, header, divider, color) != null {
+    $header-divider-color: get($list, header, divider, color);
+  }
+
+  @if get($list, sidebar, bg) != null {
+    $sidebar-bg: get($list, sidebar, bg);
+  }
+
+  @if get($list, sidebar, width) != null {
+    $sidebar-width: get($list, sidebar, width);
+  }
+
+  @if get($list, sidebar, avatar, bg) != null {
+    $sidebar-avatar-bg: get($list, sidebar, avatar, bg);
+  }
+
+  @if get($list, sidebar, controls, bg) != null {
+    $sidebar-controls-bg: get($list, sidebar, controls, bg);
+  }
+
+  @if get($list, sidebar, controls, btn, color) != null {
+    $sidebar-controls-btn-color: get($list, sidebar, controls, btn, color);
+  }
+
+  @if get($list, sidebar, controls, btn, border) != null {
+    $sidebar-controls-btn-border: get($list, sidebar, controls, btn, border);
+  }
+
+  @if get($list, sidebar, controls, btn, active-bg) != null {
+    $sidebar-controls-btn-active-bg: get($list, sidebar, controls, btn, active-bg);
+  }
+
+  @if get($list, sidebar, controls, btn, active-color) != null {
+    $sidebar-controls-btn-active-color: get($list, sidebar, controls, btn, active-color);
+  }
+
+  @if get($list, components, link, color) != null {
+    $components-link-color: get($list, components, link, color);
+  }
+
+  @if get($list, components, panel, bg) != null {
+    $components-panel-bg: get($list, components, panel, bg);
+  }
+
+  @if get($list, components, panel, border) != null {
+    $components-panel-border: get($list, components, panel, border);
+  }
+
+  @if get($list, components, form-control, border) != null {
+    $components-form-control-border: get($list, components, form-control, border);
+  }
+
+  @if get($list, components, form-control, active, border) != null {
+    $components-form-control-active-border: get($list, components, form-control, active, border);
+  }
+
+  @if get($list, footer, color) != null {
+    $footer-color: get($list, footer, color);
+  }
+
+  @if get($list, footer, bg) != null {
+    $footer-bg: get($list, footer, bg);
+  }
+
+  @include theme-mixin($name, (
+    theme (
+      color $theme-color,
+      bg $theme-bg-color
+    ),
+    body (
+      bg $body-bg-color,
+      color $body-color
+    ),
+    header (
+      bg $header-bg-color,
+      color $header-color,
+      hover-color $header-hover-color,
+
+      logout (
+        bg $logout-bg-color,
+        color $logout-color,
+        hover-bg $logout-hover-bg
+      ),
+
+      sidebar-btn (
+        bg $sidebar-btn-bg,
+        color $sidebar-btn-color,
+        hover-bg $sidebar-btn-hover-bg
+      ),
+
+      divider (
+        color $header-divider-color
+      )
+    ),
+    sidebar (
+      bg $sidebar-bg,
+      width $sidebar-width,
+      avatar (
+        bg $sidebar-avatar-bg
+      ),
+      controls (
+        bg $sidebar-controls-bg,
+        btn (
+          color $sidebar-controls-btn-color,
+          border $sidebar-controls-btn-border,
+          active-bg $sidebar-controls-btn-active-bg,
+          active-color $sidebar-controls-btn-active-color
+        )
+      )
+    ),
+    components (
+      link (
+        color $components-link-color
+      ),
+      panel (
+        bg $components-panel-bg,
+        border $components-panel-border
+      ),
+      form-control (
+        border $components-form-control-border,
+        active (
+          border $components-form-control-active-border
+        )
+      )
+    ),
+    footer (
+      bg $footer-bg,
+      color $footer-color
+    )
+  ));
+}
