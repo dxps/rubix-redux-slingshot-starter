@@ -1,8 +1,0 @@
-@mixin theme-link($list) {
-  a {
-    color: get($list, components, link, color);
-    &:hover, &:focus {
-      color: darken(get($list, components, link, color), 10%);
-    }
-  }
-}

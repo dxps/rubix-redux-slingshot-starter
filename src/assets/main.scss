@@ -1,9 +1,7 @@
 @import "variables";
 
-//@import "@sketchpixy/rubix/sass/rubix";
-//@import "@sketchpixy/rubix/sass/vendor";
-@import "rubix/rubix";
-@import "rubix/vendor";
+@import "~@sketchpixy/rubix/sass/rubix";
+@import "~@sketchpixy/rubix/sass/vendor";
 
 @import "colors";
 @import "theme";

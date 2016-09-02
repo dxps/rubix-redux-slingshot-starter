@@ -1,9 +1,0 @@
-@mixin theme-menu($list) {
-  .dropdown-menu .active > a {
-    background-color: get($list, theme, bg);
-
-    &:hover, &:focus {
-      background-color: get($list, theme, bg);
-    }
-  }
-}
